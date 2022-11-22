@@ -35,7 +35,6 @@ function App() {
 
   const getdataaxios = async() =>{
     const response = await axios.get(baseURL)
-    console.log(response.data)
     setGetdate(response.data.date)
     setCurrency([...Object.keys(response.data.rates)])
     setExchangerate(response.data.rates[tocurrency])
@@ -53,11 +52,11 @@ function App() {
 
 
   return(
-    <div class='container d-flex flex-column align-items-center p-5 w-75 text-center'>
-      <h1 class='fs-1 fw-semibold mt-1 mt-md-5 mx-5 text-dark position-static'> Currency Exchange</h1>
-      <h3 class='fs-6 fw-light text-secondary mx-5'>  exchange rate for transfer your money  </h3>
+    <div className='container d-flex flex-column align-items-center p-5 w-75 text-center'>
+      <h1 className='fs-1 fw-semibold mt-1 mt-md-5 mx-5 text-dark position-static'> Currency Exchange</h1>
+      <h3 className='fs-6 fw-light text-secondary mx-5'>  exchange rate for transfer your money  </h3>
       
-      <div class=' p-4 mt-2 mt-md-5 d-flex flex-column flex-nowrap flex-md-row min-vw-50'>
+      <div className=' p-4 mt-2 mt-md-5 d-flex flex-column flex-nowrap flex-md-row min-vw-50'>
         <Currency 
         currency = {currency} 
         change = {fromcurrency}
@@ -76,12 +75,12 @@ function App() {
         direction = 'to'
         />
       </div>
-      <div class = 'container d-flex flex-column mt-2 mt-md-5 pt-4 pt-sm-5'>
+      <div className = 'container d-flex flex-column mt-2 mt-md-5 pt-4 pt-sm-5'>
         <label> {getdate} </label>
-        <div class = 'd-flex flex-column flex-md-row justify-content-center'>
-        <label class= 'fw-light fs-6' > Provider: </label>
+        <div className = 'd-flex flex-column flex-md-row justify-content-center'>
+        <label className = 'fw-light fs-6' > Provider: </label>
         <a href="https://www.exchangerate-api.com/"  target="_blank" rel="noopener noreferrer" 
-        class='fw-light text-decoration-none text-secondary ' > https://www.exchangerate-api.com/ 
+        className='fw-light text-decoration-none text-secondary ' > https://www.exchangerate-api.com/ 
         </a>
         </div>
         </div>
